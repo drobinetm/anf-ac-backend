@@ -66,6 +66,9 @@ class User extends Authenticate
         'name',
         'email',
         'password',
+        'last_name',
+        'age',
+        'gender',
     ];
 
     /**
