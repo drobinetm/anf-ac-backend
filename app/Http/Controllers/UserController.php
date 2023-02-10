@@ -44,8 +44,7 @@ class UserController extends Controller
     public function store(CreateUserRequest $request): JsonResponse
     {
         $response = $this->userService->create($request->validated());
-        $resource = UserResource::collection($response);
-        return response()->json($resource, Response::HTTP_OK);
+        return response()->json(new UserResource($response), Response::HTTP_OK);
     }
 
     /**
@@ -58,8 +57,7 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $user): JsonResponse
     {
         $response = $this->userService->update($user, $request->validated());
-        $resource = UserResource::collection($response);
-        return response()->json($resource, Response::HTTP_OK);
+        return response()->json(new UserResource($response), Response::HTTP_OK);
     }
 
     /**

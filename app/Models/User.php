@@ -51,11 +51,13 @@ use Laravel\Passport\Token;
  * @method static Builder|User wherePassword($value)
  * @method static Builder|User whereRememberToken($value)
  * @method static Builder|User whereUpdatedAt($value)
- * @mixin Eloquent
+ * @mixin \Eloquent
  */
 class User extends Authenticate
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    protected $table = "users";
 
     /**
      * The attributes that are mass assignable.

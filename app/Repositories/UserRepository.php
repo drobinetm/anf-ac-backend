@@ -33,7 +33,14 @@ class UserRepository
      * @return User
      */
     public function create(array $attributes): User {
-        return new User($attributes);
+        return User::create([
+            'name' => $attributes['name'],
+            'email' => $attributes['email'],
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', //password
+            'last_name' => $attributes['lastName'],
+            'age' => $attributes['age'] ?? 20,
+            'gender' => $attributes['gender'] ?? 'Female',
+        ]);
     }
 
     /**
