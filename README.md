@@ -10,6 +10,12 @@
 # Deploy
 php artisan passport:keys
 
+# Endpoints
+1. `/api/users  [GET]`
+2. `/api/users [POST]` 
+3. `/api/users/{id} [PUT]`
+4. `/api/users/{id} [DELETE]`
+
 #Tasks
 1. Crear un proyecto de Laravel con las clases necesarias para almacenar la tabla creada para el frontend.
 2. Crear un API para agregar/modificar/eliminar y listar las personas.
